@@ -1,5 +1,5 @@
 let bemVindo = "bem vindo";
-let quilometros = 25;
+let quilometros = 26;
 let finalizado = true;
 
 console.log("Olá seja " + bemVindo + " ao programa!");
