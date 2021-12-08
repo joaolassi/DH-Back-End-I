@@ -4,22 +4,23 @@ function Aluno(nome, qtdFaltas, notas) {
   this.nome = nome;
   this.qtdFaltas = qtdFaltas;
   this.notas = notas;
-  this.calcularMedia = function() {
-    // declaro a variável para somar todas as notas
-    let somaNotas = 0;
-    // laço de repetição for para percorrer o array de notas
-    for (let i = 0; i < this.notas.length; i++) {
-      // Adiciono cada nota à soma de notas
-      somaNotas += this.notas[i];
+  this.calcularMedia = function () {
+      // declaro a variável para somar todas as notas
+      let somaNotas = 0;
+      // laço de repetição for para percorrer o array de notas
+      for (let i = 0; i < this.notas.length; i++) {
+        // Adiciono cada nota à soma de notas
+        somaNotas += this.notas[i];
+      }
+      // retorno a média das notas
+      return somaNotas / this.notas.length;
+    },
+    // apenas adiciono um às faltas quando o método for chamado
+    this.faltas = function () {
+      this.qtdFaltas++;
     }
-    // retorno a média das notas
-    return somaNotas / this.notas.length;
-  },
-  // apenas adiciono um às faltas quando o método for chamado
-  this.faltas = function () {
-    this.qtdFaltas ++;
-  }
 }
+
 // crio os alunos
 var aluno1 = new Aluno("Michael", 2, [10, 7.5, 6, 8.6]);
 var aluno2 = new Aluno("Renata", 1, [10, 10, 9.8, 10]);
@@ -32,6 +33,7 @@ curso.curso.adicionarAlunos(aluno2);
 curso.curso.adicionarAlunos(aluno3);
 curso.curso.adicionarAlunos(aluno4);
 
+// Mostro a lista de estudantes
 console.log(curso.curso.listaEstudantes);
-
+// Mostro os aprovados
 console.log(curso.curso.listaAprovacoes());
